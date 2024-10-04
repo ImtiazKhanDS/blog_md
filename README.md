@@ -1,4 +1,4 @@
-# blog_md
+##### Personal Blogging Platform.
 
 steps to install and run:
 
