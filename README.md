@@ -1,6 +1,12 @@
 # blog_md
 
-requirements:
-brew install uv
-uv init
-uv venv --python=3.12.0
+steps to install and run:
+
+    1. brew install uv
+
+    2. uv init
+
+    3. uv venv --python=3.12.0
+
+    4. uv run main.py
+
