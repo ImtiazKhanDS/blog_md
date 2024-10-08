@@ -30,7 +30,6 @@ def fact(N:int):
 flowchart TD
 
 A[main] --> B["fact(5)"] --> C["fact(4)"] --> D["fact(3)"] --> E["fact(2)"] --> F["fact(1)"] --> G["fact(0)"]
-
 ```
 
 This is top to bottom (depth first) , the return happens in bottom to top fashion. The first function to return is the bottom (LIFO) . This is called stack.
@@ -374,8 +373,6 @@ f7("f(4,5)") --> f14("f(5, 5)")
 
 f6("f(5,6)") --> f15("f(5,5)")
 f6("f(5,6)") --> f16("f(6, 6)")
-
-
 ```
 
 ```python

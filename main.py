@@ -40,14 +40,67 @@ search_modal_css = Style("""
 }
 """)
 
-hdrs = (
-    MarkdownJS(),
-    HighlightJS(langs=['python', 'javascript', 'html', 'css',]),
+mermaid_modal_css = Style("""
+.mermaid svg {
+    overflow: scroll;
+    width: 100%;
+}
+""")
+
+
+
+def MermaidJS(
+        sel='.language-mermaid',  # CSS selector for mermaid elements
+        theme='base',  # Mermaid theme to use
+        delay=500  # Delay in milliseconds before rendering
+    ):
+    "Implements browser-based Mermaid diagram rendering."
+    src = """
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+mermaid.initialize({
+    startOnLoad: false,
+    theme: '%s',
+    securityLevel: 'loose',
+    flowchart: { useMaxWidth: false, useMaxHeight: false }
+});
+
+function renderMermaidDiagrams() {
+    const diagrams = document.querySelectorAll('%s');
+    diagrams.forEach((element, index) => {
+        try {
+            const graphDefinition = element.textContent;
+            const graphId = `mermaid-diagram-${index}`;
+            mermaid.render(graphId, graphDefinition)
+                .then(({svg, bindFunctions}) => {
+                    element.innerHTML = svg;
+                    bindFunctions?.(element);
+                })
+                .catch(error => {
+                    console.error(`Error rendering Mermaid diagram ${index}:`, error);
+                    element.innerHTML = `<p>Error rendering diagram: ${error.message}</p>`;
+                });
+        } catch (error) {
+            console.error(`Error processing Mermaid diagram ${index}:`, error);
+        }
+    });
+}
+
+proc_htmx('%s', () => {
+    setTimeout(renderMermaidDiagrams, %d);
+});
+""" % (theme, sel, sel, delay)
+    return Script(src, type='module')
+hdrs = ( 
+    KatexMarkdownJS(),
+    HighlightJS(langs=['python']),
+
     Link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css', type='text/css'),
     Link(rel='stylesheet', href='https://cdn.jsdelivr.net/npm/sakura.css/css/sakura.css', type='text/css'),    
     Link(rel='stylesheet', href='/public/style.css', type='text/css'),        
-    search_modal_css
-)
+    search_modal_css,
+    MermaidJS()
+    )
 
 class ContentNotFound(Exception): pass
 
