@@ -5,6 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "fasthtml-hf>=0.1.5",
     "python-fasthtml>=0.6.9",
     "pytz>=2024.2",
 ]

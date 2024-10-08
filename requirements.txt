@@ -1,0 +1,7 @@
+fasthtml-hf
+python-fasthtml
+pyyaml
+pytz
+feedgen
+markdown
+rich

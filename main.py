@@ -187,7 +187,7 @@ def Layout(title, socials, *tags):
             P(
                 A('About', href='/about'),' | ', 
                 A('Articles', href='/posts'), ' | ',
-                A('Books', href='/books'), ' | ',
+                #A('Books', href='/books'), ' | ',
                 A('Jobs', href='/jobs'), ' | ',
                 A('Tags', href='/tags'), ' | ',
                 A('Search', href='/search')
@@ -254,10 +254,10 @@ def MarkdownPage(slug: str):
     content = ''.join(text.split("---")[2:])
     metadata = yaml.safe_load(text.split("---")[1])
     return (Title(metadata.get('title', slug)),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title=metadata.get('title', slug),
                         description=metadata.get('description', 'slug'),
-                        url=f"https://imtiaz.khan.com/{slug}",
+                        url=f"ttps://imtiazkhan.in/{slug}",
                         image=metadata.get("image", default_social_image),
                         ),                
         A("← Back to home", href="/"),
@@ -271,11 +271,11 @@ def MarkdownPage(slug: str):
 def Page404():
     """404 view"""
     return FtResponse(Layout(Title("404 Not Found"),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                     title="Imtiaz Khan",
                     description="Imtiaz Khan's personal blog",
-                    url="https://imtiaz.khan.com",
-                    image="https://imtiaz.khan.com/public/images/profile.jpg",
+                    url="https://imtiazkhan.in",
+                    image="https://imtiazkhan.in/public/images/profile.jpg",
                     ),                  
         H1("404 Not Found"), P("The page you are looking for does not exist.")),
 
@@ -297,11 +297,11 @@ def index():
     popular = [BlogPostPreview(title=x["title"],slug=x["slug"],timestamp=x["date"],description=x.get("description", "")) for x in list_posts() if x.get("popular", False)]    
     return Layout(
         Title("Imtiaz Khan"),        
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                     title="Imtiaz Khan",
                     description="Imtiaz Khan's personal blog",
-                    url="https://imtiaz.khan.com",
-                    image="https://imtiaz.khan.com/public/images/profile.jpg",
+                    url="https://imtiazkhan.in",
+                    image="https://imtiazkhan.in/public/images/profile.jpg",
                     ),
         Section(
                 H1('Recent Writings'),
@@ -322,11 +322,11 @@ def get():
     
     return Layout(
         Title("All posts by Imtiaz Khan"),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title="All posts by Imtiaz Khan",
                         description=description,
-                        url="https://imtiaz.khan.com/posts/",
-                        image="https://imtiaz.khan.com/public/images/profile.jpg",
+                        url="https://imtiazkhan.in/posts/",
+                        image="https://imtiazkhan.in/public/images/profile.jpg",
                         ),
         Section(
                 H1(f'All Articles ({len(posts)})'),
@@ -351,11 +351,11 @@ def get(slug: str):
         )
     return Layout(
         Title(metadata['title']),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title=metadata["title"],
                         description=metadata.get("description", ""),
-                        url=f"https://imtiaz.khan.com/posts/{slug}",
-                        image="https://imtiaz.khan.com" + metadata.get("image", default_social_image),
+                        url=f"https://imtiazkhan.in/posts/{slug}",
+                        image="https://imtiazkhan.in" + metadata.get("image", default_social_image),
                         ),        
         Section(
             H1(metadata["title"]),
@@ -370,11 +370,11 @@ def get(slug: str):
 def get():
     tags = [TagLinkWithCount(slug=x[0], count=x[1]) for x in list_tags().items()]
     return Layout(Title("Tags"),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title="Tags",
                         description="All tags used in the site.",
-                        url="https://imtiaz.khan.com/tags/",
-                        image="https://imtiaz.khan.com/public/images/profile.jpg",
+                        url="https://imtiazkhan.in/tags/",
+                        image="https://imtiazkhan.in/public/images/profile.jpg",
                         ),               
         Section(
             H1('Tags'),
@@ -389,11 +389,11 @@ def get():
 def get(slug: str):
     posts = [BlogPostPreview(title=x["title"],slug=x["slug"],timestamp=x["date"],description=x.get("description", "")) for x in list_posts() if slug in x.get("tags", [])]
     return Layout(Title(f"Tag: {slug}"),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title=f"Tag: {slug}",
                         description=f'Posts tagged with "{slug}" ({len(posts)})',
-                        url=f"https://imtiaz.khan.com/tags/{slug}",
-                        image="https://imtiaz.khan.com/public/images/profile.jpg",
+                        url=f"https://imtiazkhan.in/tags/{slug}",
+                        image="https://imtiazkhan.in/public/images/profile.jpg",
                         ),                       
         Section(
             H1(f'Posts tagged with "{slug}" ({len(posts)})'),
@@ -434,11 +434,11 @@ def get(q: str|None = None):
     if q is not None:
         result.append(_search(q))
     return Layout(Title("Search"), 
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title="Search the site",
                         description='',
-                        url="https://imtiaz.khan.com/search",
-                        image="https://imtiaz.khan.com/public/images/profile.jpg",
+                        url="https://imtiazkhan.in/search",
+                        image="https://imtiazkhan.in/public/images/profile.jpg",
                         ),                    
         Form(style="text-align: center;")(
             Input(name="q", id='q', value=q, type="search", autofocus=True),
@@ -482,10 +482,10 @@ def get(slug: str):
     except: return Page404()
     return Layout(
         Title("Demo JupyterA"),
-        Socials(site_name="https://imtiaz.khan.com",
+        Socials(site_name="https://imtiazkhan.in",
                         title="Demo Jupyter",
                         description='Demo Jupyter',
-                        url=f"https://imtiaz.khan.com/{slug}.ipynb",
+                        url=f"https://imtiazkhan.in/{slug}.ipynb",
                         image=default_social_image,
                         ),  
         nb
