@@ -164,3 +164,4 @@ cython_debug/
 notebooks/*
 *.obsidian
 launch.json
+.venv
