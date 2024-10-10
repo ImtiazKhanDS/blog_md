@@ -388,3 +388,285 @@ get_max(temp, 0, 6)
 ```
 
 Time Complexity : $N +  \frac{N}{2}  + \frac{N}{4}....1 = \log_{2}{N}$
+
+**Fast Exponentiation**
+
+Given a number N and integer k , find $N^k$
+
+```python
+
+def get_pow(n:int, k:int):
+    if k==0:
+        return 1
+
+    res = get_pow(n,k//2)
+    if k%2==0:
+        return res * res
+    else:
+        return n * res * res
+```
+
+In each step k is getting reduced by 2 , so the height of tree is
+$\log_2{k}$, time complexity is O($\log_2{k}$)
+
+Now the idea will be what if we want to reduce it by thrice instead of twice
+
+$n^k = n^{k/3} *  n^{k/3}* n^{k/3}$
+
+$n^6 = n^{2} *  n^{2}* n^{2}$ --> remainder 0
+
+$n^7 = n^{2} *  n^{2}* n^{2} * n$ --> remainder 1
+
+$n^8 = n^{2} *  n^{2}* n^{2} * n^{2}$ --> remainder 2
+
+time complexity O($\log_3{k}$) , Although the function calls are less
+but the amount of work done is almost double in this case because of three remainders.
+
+**Balanced Parenthesis**
+
+Given N pairs of braces , print all pairs of balanced parenthesis.
+
+For N = 3
+
+    - ((()))
+    - (()())
+    - (())()
+    - ()(())
+    - ()()()
+
+Cases
+
+1. $Cnt('(') == Cnt(')')$ then next brace would be
+   a. string is complete , do nothing
+   b. if string is not completed, just add opening brace '('
+
+2. $Cnt('(') > Cnt(')')$ then next brace could be
+   a. if all opening braces are over then just add closing brace
+   b. if opening braces are remaining then add opening brace as well as closing brace.
+
+l = 0 , r = 0, s = ""
+
+```mermaid
+graph TD
+f0("f{0, 0, ''}") --> f1("f{1, 0, '('}")
+
+
+f1 --> f2("f{2, 0, '(('}")
+f1 --> f3("f{1, 1, '()'}")
+
+f2 --> f4("f{3, 0, '((('}")
+f2 --> f5("f{2, 1, '(()'}")
+
+f3 --> f6("f{2, 1, '(()'}")
+f3 --> f7("f{2, 0, '(()'")
+
+f4 --> f8("f{3, 1, '((()'}")
+
+f5 --> f9("f{3, 1, '(()('}")
+f5 --> f10("f{2, 2, '(())'}")
+
+f6 --> f11("f{3, 1, '(()('}")
+f6 --> f12("f{2, 2, '(())'}")
+
+f7 --> f13("f{3, 0, '(()('}")
+
+f8 --> f14("f{3, 2, '((())'}")
+
+f9 --> f15("f{3, 2, '(()()'}")
+
+f10 --> f16("f{3, 2, '(())('}")
+
+f11 --> f17("f{3, 2, '(()()'}")
+
+f12 --> f18("f{3, 2, '(())('}")
+
+f13 --> f19("f{3, 1, '(()()'}")
+
+f14 --> f20("f{3, 3, '((()))'}")
+
+f15 --> f21("f{3, 3, '(()())'}")
+
+f16 --> f22("f{3, 3, '(())()'}")
+
+f17 --> f23("f{3, 3, '(()())'}")
+
+f18 --> f24("f{3, 3, '(())()'}")
+
+f19 --> f25("f{3, 2, '(()()'}")
+
+f25 --> f26("f{3, 3, '()(())'}")
+
+```
+
+```python
+def printbraces(N:int, l:int, r:int, i:int, s:str):
+    if i == 2*N:
+        print("".join(s))
+        return
+
+    if l == r:
+        s[i] = '('
+        printbraces(N, l+1, r, i+1, s)
+
+    elif l>r:
+        if l == N:
+            s[i] = ')'
+            printbraces(N, l, r+1, i+1, s)
+        else:
+            s[i] = '('
+            printbraces(N, l+1, r, i+1, s)
+            s[i] = ')'
+            printbraces(N, l, r+1, i+1, s)
+
+N = 3
+s = ['' for i in range(2*N)]
+printbraces(N, 0, 0 , 0, s)
+```
+
+**Lexicographic Order**
+
+Given set = [1, 2, 3] , the lexicographic order is
+[]
+[1]
+[1, 2]
+[1, 2, 3]
+[1, 3]
+[2]
+[2, 3]
+[3]
+
+```mermaid
+graph TD
+
+f0("f([], 0)") --> f1("f([1], 1)")
+f0 --> f2("f([2], 2)")
+f0 --> f3("f([3], 3)")
+f1 --> f4("f([1, 2], 2)")
+f1 --> f5("f([1,3], 3)")
+f4 --> f6("f([1, 2, 3], 3)")
+f2 --> f7("f([2, 3], 3)")
+```
+
+```python
+def lsubset(nums:list, i:int, temp:list):
+    print([x for x in temp if x])
+
+    if i == len(nums):
+        return
+
+
+    for k in range(i, len(nums)):
+        temp[k] = nums[k]
+        lsubset(nums, k+1, temp)
+        temp[k] = None
+
+
+
+nums =[1, 2, 3]
+tmp = [None]*len(nums)
+lsubset(nums, 0, tmp)
+```
+
+**Subset Sum**
+
+Given integer Arr[N] and desired integer Sum , Find the counf of distinct subsets of array
+with sum = Sum
+
+input : [1, 2, 3]
+sum = 3
+
+output : 2 , because {1, 2}, {3}
+
+```mermaid
+graph TD
+
+f0("f(0,[] 3)") --> f1("f(1, [1], 2)")
+f0("f(0,[], 3)") --> f2("f(1,[], 3)")
+
+f1 --> f3("f(2, [1, 2], 0)")
+
+f1 --> f4("f(2, [1], 2)")
+
+f3 --> f5("f(3, [1,2], 0)")
+f3 --> f6("f(3, [1,2, 3], -3)")
+f4 --> f7("f(3, [1,3], -1)")
+f4 --> f8("f(3, [1], 2)")
+f2 --> f9("f(2, [2]), 1")
+f2 --> f10("f(2, []), 3")
+
+f9 --> f11("f(3, [2]), 1")
+f9 --> f14("f(3, [2, 3]), -2")
+f10 --> f12("f(3, [3]), 0")
+f10 --> f13("f(3, []), 3")
+```
+
+````python
+def subsetSum(nums:list, i:int, sum:int, cnt:list):
+    if i == len(nums):
+        if sum == 0:
+            cnt[0]+=1
+        return cnt
+
+    subsetSum(nums, i+1, sum - nums[i], cnt)
+    subsetSum(nums, i+1, sum,cnt)
+
+cnt = [0]
+subsetSum([1,2,3], 0,3, cnt)
+print(cnt[0])```
+````
+
+Another approach without cnt variable
+
+```python
+def subsetSum(nums:list, i:int, _sum:int, cnt:list):
+    if i == len(nums):
+        return _sum == 0
+    return subsetSum(nums, i+1, _sum - nums[i], cnt) + subsetSum(nums, i+1, _sum,cnt)
+subsetSum([1,2,3], 0,3, cnt)
+```
+
+Instead of always terminating at the leaf nodes one optimization is to terminate
+whenever the sum becomes zero and return. No because the rest of the elements can
+be zero or negative and they might form a valid set.
+
+Given an integer Arr[N] positive elements only , Given a integer sum , Count number
+of the distinct combinations with sum = SUM, An element a[i] can be taken multiple times
+
+Arr = [1,2]
+Sum: 4
+
+[1,1,1,1]
+[1,1, 2]
+[2, 2]
+
+```mermaid
+graph TD
+f0("f(4, 0)") --> f1("f(4, 1)")
+f0 --> f3("f(3, 0)")
+
+f3 --> f4("f(2, 0)")
+f3 --> f5("f(3, 1)")
+
+f4 --> f6("f(1, 0)")
+f4 --> f7("f(2, 1)")
+
+f6 --> f8("f(0, 0)")
+f6 --> f9("f(1, 1)")
+
+f9 --> f10("f(1, 2)")
+f9 --> f11("f(-1, 1)")
+
+```
+
+````python
+def subsetSum(nums:list, i:int, _sum:int, cnt:list):
+    if _sum<0:
+        return 0
+    if _sum == 0:
+        return 1
+    if i == len(nums):
+        return 0
+    return (subsetSum(nums, i, _sum - nums[i], cnt)
+            + subsetSum(nums, i+1, _sum,cnt))
+subsetSum([1,2], 0,4, cnt)```
+````
