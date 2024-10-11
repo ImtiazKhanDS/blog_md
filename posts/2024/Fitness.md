@@ -76,15 +76,15 @@ How do you know what routine you are following is helping you ?
    2. Body mass index might not be a true representation because of cultural differences in a region , what truly represents correct evaluation is body composition
    3. Body fat percentage = 100 * Total mass of fat/Total mass of body
    4. One should typically have good skeletal mass as opposed to visceral fat
-   5. ![Visceral Fat](../public/images/Fitness-image-1.png)
+   5. ![Visceral Fat](../../public/images/Fitness-image-1.png)
    11. Visceral fat forms around internal organs which has to be under control.
    12. Women’s body fat percentage should bel less than 26 percent
    13. Men’s body fat percentage should be less than 18 percent
    14. How to measure : The lab people basically send a current through you , the current determines based on the water in the body how much skeletal mass is present.
    15. Waist to hip ratio : Measure waist and hips 
-   16. ![Waist Hip](../public/images/Fitness-image-2.png)
+   16. ![Waist Hip](../../public/images/Fitness-image-2.png)
    17. Waist / Hip , For men it should be less than 0.9 and for women it should be less than 0.85
-   18. ![Blood Pressure](../public/images/Fitness-image-3.png)
+   18. ![Blood Pressure](../../public/images/Fitness-image-3.png)
    19. The pulse rate for your heart should be lower when you are at rest which gives a good indication that your heart is healthy. Athletes typically have a resting heart rate between 48 to 55
 
 **Working out Smarter and Harder**
@@ -128,7 +128,7 @@ How do you know what routine you are following is helping you ?
         5. Peppermint
         6. Ginger 
      2. Digestion potion
-    ![digestion potion](../public/images/digestion_potion.png) Stay hydrated and chew food thoroughly
+    ![digestion potion](../../public/images/digestion_potion.png) Stay hydrated and chew food thoroughly
    6. Process your food for  progress : stick to steam and sauté
 
 

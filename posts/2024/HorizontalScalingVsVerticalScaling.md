@@ -20,8 +20,8 @@ scalability
 
 <table>
     <tr>
-        <td>Horizontal Scaling</td>
-        <td>Vertical Scaling</td>
+        <td>**Horizontal Scaling**</td>
+        <td>**Vertical Scaling**</td>
     </tr>
     <tr>
         <td>Load Balancing Required</td>
@@ -44,4 +44,4 @@ scalability
         <td>hardware limit</td>
     </tr>
 </table>
-![Scaling](../public/images/scaling.jpg)
+![Scaling](../../public/images/scaling.jpg)
