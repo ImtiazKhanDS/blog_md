@@ -44,4 +44,4 @@ scalability
         <td>hardware limit</td>
     </tr>
 </table>
-![Scaling](../../public/images/scaling.jpg)
+![Scaling](../../public/images/scaling.JPG)
