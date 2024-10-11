@@ -1,5 +1,5 @@
 ---
-date: "2024-07-06T10:43:00.00Z"
+date: 2024-07-06T10:43:00.00Z
 published: true
 slug: humour
 tags:
@@ -9,6 +9,7 @@ time_to_read: 5
 title: Humour
 description: How to use humour to leave a mark.
 type: post
+popular: "true"
 ---
 
 Use Humour to leave your mark

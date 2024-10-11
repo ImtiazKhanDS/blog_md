@@ -32,7 +32,7 @@ type: post
 12. LM (liquidity/ money preference) curve if the economy expands the people would need more supply of more money because of which interest increase. People need more cash for doing transactions, The higher is the interest rate the higher is GDP.
 14. IS curve (investment and savings ) if the federal cuts the interest rate , people will borrow more spend more spending the economy expands , gdp increases
 
-![](../public/images/LMCurve.png)
+![](../../public/images/LMCurve.png)
 
 15. Fed controls these curves to maintain a healthy GDP
 16. **Bank run** : A cyclical process where anxieties over a bank’s instability cause large groups of people to withdraw their money thereby making a bank more and more unstable
