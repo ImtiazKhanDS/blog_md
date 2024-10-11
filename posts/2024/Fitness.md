@@ -1,5 +1,5 @@
 ---
-date: 2024-07-15T10:33:00.00Z
+date: "2024-07-15T10:33:00.00Z"
 published: true
 slug: fitness
 tags:

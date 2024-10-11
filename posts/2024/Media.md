@@ -1,5 +1,5 @@
 ---
-date: 2024-07-02T09:24:00.00Z
+date: "2024-07-02T09:24:00.00Z"
 published: true
 slug: media
 tags:
@@ -10,7 +10,7 @@ time_to_read: 5
 title: Media Today
 description: How media manipulates us and how to fight back.
 type: post
-popular: "true"
+popular: true
 ---
 
 

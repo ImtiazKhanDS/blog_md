@@ -1,5 +1,5 @@
 ---
-date: 2024-10-05T12:49:00.00Z
+date: "2024-10-05T12:49:00.00Z"
 published: true
 slug: Recursion
 tags:
@@ -12,7 +12,7 @@ time_to_read: 5
 title: Recursion
 description: How to think recursively.
 type: post
-popular: "true"
+popular: true
 ---
 
 A process in which a function keeps calling itself is known as recursion and the corresponding function is called a recursive function. There are two important components to write a recursive function -
