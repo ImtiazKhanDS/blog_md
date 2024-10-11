@@ -1,16 +1,16 @@
 ---
-date: "2024-07-01T08:22:00.00Z"
+date: 2024-07-01T08:22:00.00Z
 published: true
 slug: habits
 tags:
   - habits
   - wellness
   - productivity
-
 time_to_read: 5
 title: Atomic Habits
 description: How to build habits that stick.
 type: post
+popular: "true"
 ---
 
    Thing big act small
