@@ -18,12 +18,30 @@ scalability
 1. buy bigger machine --> Vertical Scaling
 2. buy more machines --> Horizontal Scaling
 
-| Horizontal Scaling      | Vertical Scaling            |
-| ----------------------- | --------------------------- |
-| Load Balancing Required | N/A                         |
-| Resilient               | Single point of Failure     |
-| Network calls           | Inter process communication |
-| Data inconsistency      | Consistent                  |
-| scales well             | hardware limit              |
-
+<table>
+    <tr>
+        <td>Horizontal Scaling</td>
+        <td>Vertical Scaling</td>
+    </tr>
+    <tr>
+        <td>Load Balancing Required</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td>Resilient</td>
+        <td>Single point of Failure</td>
+    </tr>
+    <tr>
+        <td>Network calls</td>
+        <td>Inter process communication</td>
+    </tr>
+    <tr>
+        <td>Data inconsistency</td>
+        <td>Consistent</td>
+    </tr>
+    <tr>
+        <td>scales well</td>
+        <td>hardware limit</td>
+    </tr>
+</table>
 ![Scaling](../public/images/scaling.jpg)
