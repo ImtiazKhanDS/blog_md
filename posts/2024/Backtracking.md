@@ -151,3 +151,96 @@ example : "aba"
 output : aba, aab, baa
 
 Total number of distinct permuations : $\frac{3!}{2!}$
+
+example : "aab"
+
+```mermaid
+graph TD
+
+f0("abab") --> f1("abab")
+f0 --> f2("baab")
+f0 --> f3("abab")
+f0 --> f4("baab")
+```
+
+Here permutations are repeated for `abab` and `baab`
+
+In order to avoid the tree from further growing we should track
+the duplicate swaps and avoid those swaps if already done
+
+```python
+
+def permdup(st:list, i:int):
+    if i == len(st):
+        print(st)
+        return
+
+    freq = [0 for _ in range(26)]
+    for j in range(i, len(st)):
+        if freq[ord(st[j])-ord('a')] == 0:
+            st[i] , st[j] = st[j], st[i]
+            permdup(st,i+1)
+            st[j] , st[i] = st[i] , st[j]
+            freq[ord(st[j])-ord('a')]
+
+st= list("abab")
+permdup(st, 0)
+```
+
+**Paths**
+
+Given an maze of 0's and 1's , a rat has travelled to n-1 and n-1
+so that 0 is safe and 1 has poison.
+
+Find all the paths from (0, 0) to (N-1, N-1), where only right
+and down moves allowed.
+
+<table>
+    <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+<tr>
+        <td>0</td>
+        <td>0</td>
+        <td>1</td>
+        <td>0</td>
+    </tr>
+<tr>
+        <td>1</td>
+        <td>0</td>
+        <td>1</td>
+        <td>1</td>
+    </tr>
+<tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+    </tr>
+
+</table>
+
+```python
+def paths(a:list,i:int,j:int,N:int, pth:list):
+    if a[i][j] == 1:
+        return
+    if i==j and j==N-1:
+        print(pth)
+        return
+    pth.append((i,j))
+    if i == N-1:
+        paths(a, i, j+1, N, pth)
+    elif j == N-1:
+        paths(a, i+1, j,N, pth)
+    else:
+        paths(a, i+1, j,N, pth)
+        paths(a, i, j+1, N, pth)
+    pth.pop()
+
+temp = []
+a = [[0, 0, 1,1],[0,0,1,0],[1,0,1,1],[0,0,0,0]]
+paths(a,0, 0, 4, temp)
+```
