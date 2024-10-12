@@ -1,14 +1,14 @@
 ---
 date: "2024-10-12T18:49:00.00Z"
 published: true
-slug:MonolithVsMicro 
+slug: MonolithVsMicro
 tags:
   - system design
-  - Monolith 
-  - Microservice 
+  - Monolith
+  - Microservice
 time_to_read: 5
 title: Monolith vs Microservice Architecture
-description: Some companies deal with Monolith, some say Microservice is the best. Lets find out which is used when. 
+description: Some companies deal with Monolith, some say Microservice is the best. Lets find out which is used when.
 type: post
 ---
 
