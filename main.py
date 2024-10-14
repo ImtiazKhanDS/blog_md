@@ -47,12 +47,9 @@ mermaid_modal_css = Style("""
 }
 """)
 
-
-
 def MermaidJS(
         sel='.language-mermaid',  # CSS selector for mermaid elements
         theme='base',  # Mermaid theme to use
-        delay=500  # Delay in milliseconds before rendering
     ):
     "Implements browser-based Mermaid diagram rendering."
     src = """
@@ -65,31 +62,27 @@ mermaid.initialize({
     flowchart: { useMaxWidth: false, useMaxHeight: false }
 });
 
-function renderMermaidDiagrams() {
-    const diagrams = document.querySelectorAll('%s');
-    diagrams.forEach((element, index) => {
-        try {
-            const graphDefinition = element.textContent;
-            const graphId = `mermaid-diagram-${index}`;
-            mermaid.render(graphId, graphDefinition)
-                .then(({svg, bindFunctions}) => {
-                    element.innerHTML = svg;
-                    bindFunctions?.(element);
-                })
-                .catch(error => {
-                    console.error(`Error rendering Mermaid diagram ${index}:`, error);
-                    element.innerHTML = `<p>Error rendering diagram: ${error.message}</p>`;
-                });
-        } catch (error) {
-            console.error(`Error processing Mermaid diagram ${index}:`, error);
-        }
-    });
+function renderMermaidDiagrams(element, index) {
+    try {
+        const graphDefinition = element.textContent;
+        const graphId = `mermaid-diagram-${index}`;
+        mermaid.render(graphId, graphDefinition)
+            .then(({svg, bindFunctions}) => {
+                element.innerHTML = svg;
+                bindFunctions?.(element);
+            })
+            .catch(error => {
+                console.error(`Error rendering Mermaid diagram ${index}:`, error);
+                element.innerHTML = `<p>Error rendering diagram: ${error.message}</p>`;
+            });
+    } catch (error) {
+        console.error(`Error processing Mermaid diagram ${index}:`, error);
+    }
 }
 
-proc_htmx('%s', () => {
-    setTimeout(renderMermaidDiagrams, %d);
-});
-""" % (theme, sel, sel, delay)
+// Assuming proc_htmx is a function that triggers rendering
+proc_htmx('%s', renderMermaidDiagrams);
+""" % (theme, sel)
     return Script(src, type='module')
 hdrs = ( 
     KatexMarkdownJS(),

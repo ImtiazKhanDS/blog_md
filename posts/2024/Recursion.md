@@ -122,9 +122,28 @@ Need to reach (0, 0) --> (m-1, n-1)
 
 How many distinct paths ? Given Constraints : 1. 1 Unit right and 1 Unit Bottom
 
-| (0, 0) | -   | -      |
-| ------ | --- | ------ |
-| -      | -   | (m, n) |
+<table>
+<tr>
+<td>(0, 0)</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td>-</td>
+<td>-</td>
+<td>(m, n)</td>
+</tr>
+</table>
 
 `Recurrence relation : CountPaths(i,j) = CountPaths(i,j+1) + CountPaths(i+1,j)`
 
