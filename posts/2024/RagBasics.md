@@ -1,5 +1,5 @@
 ---
-date: "2024-24-10T11:57:00.00Z"
+date: "2024-10-24T11:57:00.00Z"
 published: true
 slug: RAGBasics
 tags:
