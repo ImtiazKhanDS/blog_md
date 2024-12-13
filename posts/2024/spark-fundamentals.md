@@ -124,7 +124,7 @@ Expert Advice : Every other setting , we should not touch
 **Shuffle sort-merge join flow**
 
 ```mermaid
-graph TB
+graph TD
 
 TEXT("Stage One (MAP)")
 
@@ -145,7 +145,7 @@ P --> H2("Partition 2")
 P --> H3("Partition 3")
 
 
-TEXT ---> TEXT1("Stage Two (reduce)")
+TEXT --> TEXT1("Stage Two (reduce)")
 ```
 
 In the first map step each file is mapped by the criteria(for example user_id % 2 to the partition)
