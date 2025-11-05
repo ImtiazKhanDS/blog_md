@@ -3,15 +3,13 @@ date: "2025-10-18T21:21:00.00Z"
 published: true
 slug: Reranking
 tags:
-
-- Agentic AI
-- AI
-- LLM
-  time_to_read: 5
-  title: Reranking
-  description: Reranking is one of the most important topics in semantic search 
-  type: post
-
+  - Agentic AI
+  - AI
+  - LLM
+time_to_read: 5
+title: Reranking
+description: Reranking is one of the most important topics in semantic search
+type: post
 ---
 
 If you're building semantic search or RAG systems, understanding this architectural difference can make or break your performance.
