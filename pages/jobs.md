@@ -8,7 +8,6 @@ og_url:
 
 # Imtiaz Khan
 
-# Imtiaz Khan
 
 📍 Andhra Pradesh, India  
 📞 +91 9493377607  
