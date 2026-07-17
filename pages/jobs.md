@@ -3,169 +3,261 @@ title: "Jobs at Imtiaz Khan"
 description: "These are employers who I worked for."
 author: "Imtiaz Khan"
 image: /public/images/future-office.png
-og_url: 
+og_url:
 ---
 
-Imtiaz Khan
-===========
+# Imtiaz Khan
 
-Sr Staff Generative AI
--------------------
+# Imtiaz Khan
 
-+91-9493377607 imtiaz.khan.bds@gmail.com   [LinkedIn](http://linkedin.com/in/imtiaz-khan-54257bbb)    [Github](https://github.com/ImtiazKhanDS)
+📍 Andhra Pradesh, India  
+📞 +91 9493377607  
+📧 imtiaz.khan.bds@gmail.com
 
-* * *
+---
 
-Summary
--------
+# AI Architect | Agentic AI | LLM Systems | Generative AI
 
-* * *
+Enterprise AI Architect with 13+ years of experience designing and delivering production-grade AI platforms, Agentic AI systems, Retrieval-Augmented Generation (RAG), and LLM-powered enterprise applications.
 
-Sr Staff Machine learning Scientist with 12 plus years of experience executing data-driven solutions to increase efficiency, accuracy and utility of data processing. Proficient in building end to end search based systems using retrieval augmented generation and Ilms.
+Specialized in architecting scalable AI solutions using **AWS Bedrock, LangGraph, LangChain, MCP, FastAPI, OpenSearch, Kubernetes, and EKS** while leading AI platform architecture, governance, observability, and cloud-native deployments.
 
-* * *
+**Core Expertise**
 
-Work Experience
----------------
+- Enterprise AI Architecture
+- Agentic AI & Multi-Agent Systems
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- AWS Bedrock
+- LangGraph & LangChain
+- MCP (Model Context Protocol)
+- AI Platform Engineering
+- LLMOps & Observability
+- Cloud Architecture
+- Distributed Systems
+- OpenSearch / Elasticsearch
+- AI Governance
 
-* * *
+---
 
-### Cisco April 2024 – Present
+# Professional Experience
 
-#### **Netacad Copilot** - Engineering Technical Leader Generative AI
+## Rackspace
 
-*   Enhanced Netacad platform with Generative AI capabilities for course learners to query on course topics and get answers from course sections using Retrieval Augmented Generative Search (RAG) data using LLM models like Anthropic Claude sonnet -3.4 llama3.1, and mistral 7B models.
-    
-*   Employed Prompt tuning and Prompt Engineering techniques using pydantic to retrieve information from OpenSearch Database.
-    
-*   Created monitoring stack on llm responses using Apache Superset and Postgres Database.
-    
-*   Supported Translation capabilites by creating a llm translation wrapper using Mixtral 45B model.
-    
-*   Developed a data pipeline workflow to move course data present in gitlab repositories to OpenSearch using PGSync Connector and Intermediate(Postgres Database) mechanism.
-    
-*   Added Security level access between data resources for course learners and course instructors.
-    
+### AI Architect / AI Engineer (Agentic AI)
 
-* * *
+**March 2025 – Present**
 
-### H1 Life Sciences July 2023 – April 2024
+### Highlights
 
-#### **GenosAI** - Senior Staff Generative AI
+- Architected **Rackspace Expert (REX)**, an enterprise AI assistant built using AWS Bedrock, LangGraph, and MCP to enable extensible multi-agent workflows across enterprise knowledge systems.
+- Developed backend services using **FastAPI, Pydantic, and LangGraph** with integrated **Arize Phoenix** observability, improving LLM evaluation and tracing by approximately **30%**.
+- Designed **FLO**, a Python-based document ingestion and embedding pipeline for AWS OpenSearch, improving retrieval quality by **25%**.
+- Optimized AWS cloud architecture for scalability, reliability, and cost efficiency, reducing infrastructure costs by approximately **20%**.
+- Defined enterprise AI architecture and governance for Agentic AI platforms, RAG systems, and LLM automation initiatives.
+- Built enterprise automation solutions using **Sema4, AWS QuickSight, LangChain, and LangGraph**, reducing manual effort across multiple workflows.
+- Won **2 AWS Generative AI Innovation Center Partner Hackathons** for enterprise MCP and Agentic AI solutions.
+- Built an automated SSL certificate renewal agent using QuickSight and Sema4, reducing manual effort by **40%**.
+- Contributed to enterprise architecture initiatives involving MCP, Palantir, and enterprise data architecture.
 
-*   Enabled Retrieval Augmented Generative Search (RAG) for clinical Trials, Health Care Professionals(HCP's) and Institutions data using LLM models like openai gpt-4, llama2, mistral etc.
-    
-*   Employed Prompt tuning and Prompt Engineering techniques using pydantic to generate elastic search queries.
-    
-*   created embeddings for documents and stored on elastic search to enable K nearest neighbours KNN search on the embeddings.
-    
-*   Developed fastapi apis and exposed them on Amazon elastic kubernetes service.
-    
-*   Conducted Code reviews ,and ci-cd pipelining using circle-ci.
-    
-*   Added Infra setup and Deployed the app on Amazon Kubernetes service.
-    
+---
 
-* * *
+## Cisco
 
-### Palo Alto Networks April 2022 – April 2023
+### Engineering Technical Leader – Generative AI
 
-#### **PII Information Classification** - Staff Machine Learning
+**April 2024 – November 2024**
 
-*   Enabled a pii/phi/pci detection strategy across multiple communication channels and different types of files using NER techniques.
-    
-*   Reduced the false positive rate from 15 percent to 7 percent by using advanced semi-supervised learning techniques and architectures like longformer.Reduced the false positive rate from 15 percent to 7 percent by using advanced semi-supervised learning techniques and architectures like longformer.
-    
-*   Strategized the structured pii identification using character cnn models and integrated it with existing regex based system.
-    
+### Highlights
 
-* * *
+- Led Generative AI integration into Cisco NetAcad using **Claude Sonnet 3.5, Llama 3.1, Mistral, and RAG**.
+- Improved retrieval quality by **25%** using prompt engineering, Pydantic, OpenSearch, and PGSync.
+- Built an enterprise monitoring platform using **Apache Superset** and PostgreSQL to analyze over **1,000+** LLM-generated responses.
+- Developed multilingual AI capabilities using Mixtral, enabling enterprise-wide language support.
+- Automated GitLab-to-OpenSearch indexing, improving indexing efficiency by **35%**.
+- Expanded multilingual search capabilities across **5 additional languages** using multilingual LLM workflows.
 
-### Novartis Nov 2020 – March 2022
+---
 
-#### **DocZ Document AI Assistant** - Staff Data Scientist
+## H1 Life Sciences
 
-*   Enhanced In-house DocZ product to condense clinical study report information with NLP Actions using techniques like Named entity recognition (NER in scispacy and microsoft text analytics for health).
-    
-*   Condensed the clinical study report document by 75 percent by using One-shot Summarization by using Universal sentence Encoder Embeddings.
-    
-*   Improved the table extraction of measurements by 95 percent from irregular rtf files to excel by using tabula module in python. , Employed Computer Vision techniques through layout parser employing object detection on tables from rastarized images in pdf documents.
-    
+### Senior Staff Generative AI Engineer
 
-* * *
+**July 2023 – April 2024**
 
-### Deloitte Dec 2018 – Nov 2020
+### Highlights
 
-#### **Fraud Detection** - Data Science Consultant
+- Led enterprise RAG implementation using **GPT-4, Llama 2, and Mistral** for clinical research.
+- Built FastAPI services on **Amazon EKS** with vector search and embeddings.
+- Improved enterprise retrieval quality by **30%**.
+- Designed Elasticsearch query generation using prompt engineering and Pydantic.
+- Architected CI/CD pipelines using CircleCI.
+- Built hybrid semantic + keyword search using OpenAI embeddings.
+- Developed vector databases supporting enterprise healthcare outreach for **IQVIA, Novartis, and Eli Lilly**.
 
-*   Implemented machine learning to reduce fraud by 8 percent by using Gradient Boosting Trees.
-    
-*   Brought down the client metric (false positive/true positive) ratio under 4 as opposed to 6.5.
-    
+---
 
-#### **Complaint Categorization** - Software Engineer-NLP
+## Palo Alto Networks
 
-*   Automated the complaint categorization from manual process by using tfidf,text analytics, logistic regression with 0.8 F1 Score at each level.
-    
-*   Reduced time of complaint categorization for 1000 complaints from 20 business hours to 2 minutes.
-    
+### Staff Machine Learning Engineer
 
-* * *
+**April 2022 – April 2023**
 
-### Accenture May 2012 – Dec 2018
+### Highlights
 
-#### **Question Generation Wizard** - Software NLP Engineer
+- Designed enterprise PII, PHI, and PCI detection systems using NER and deep learning.
+- Reduced false positives from **15% to 7%** using Longformer-based semi-supervised learning.
+- Combined CNN models with regex frameworks for structured entity detection.
+- Increased sensitive entity identification by **8%** across over **10,000** enterprise records.
 
-*   Automated generation of FAQ questions given answer and context using LSTM/RNN Encoder Decoder deep learning models.
-    
-*   Able to reduce the time of FAQ creation of questions when compared with an Subject Matter Expert by 80 percent.
-    
+---
 
-#### **Ticket Classification** - Software NLP Engineer
+## Novartis
 
-*   Leveraged Azure Machine learning for efficient classification of incoming software/hardware related tickets into issue categories using email description by using ensemble of models like logistic regression,boosted decision trees and naive bayes algorithms.
-    
-*   The time of classification of tickets to correct categories was reduced to 10ms.
-    
+### Staff Data Scientist
 
-* * *
+**November 2020 – March 2022**
 
-Education
----------
+### DocZ Document AI Assistant
 
-**Indian School of Business** - Business Analytics Graduate Certificate [Sept. 2016 – Jan 2018]
+### Highlights
 
-**V.R Siddhartha engineering College** - Bachelors in Electronics and Communication Engineering [Sept. 2008 – May 2012]
+- Built enterprise Document AI solutions using SciSpacy and Microsoft Text Analytics for Health.
+- Improved summarization quality by **30%** for clinical study reports.
+- Reduced report sizes by **75%** using one-shot summarization.
+- Improved extraction accuracy from RTF files to Excel by **95%**.
+- Applied computer vision and layout parsing to improve PDF table extraction.
+- Reduced document review time from **16 hours to 4 hours**.
 
-  
+---
 
-* * *
+## Deloitte
 
+### Data Scientist – Fraud Detection
 
-Skills
-------
+**December 2018 – November 2020**
 
-* * *
+---
 
-*   Python
-*   SQL
-*   Git
-*   GPT-4
-*   HuggingFace
-*   Fastai
-*   Gradio
-*   Langchain
-*   Pandas
-*   Numpy
-*   Fastapi
-*   Pydantic
-*   Poetry
-*   LLAMa-3
-*   Mistral
-*   Elastic Search
-*   Docker
-*   Postgres
-*   Apache Superset
-*   AWS services
-*   OpenSearch
-*   PGSync
+## Accenture
+
+### Software Engineer (NLP)
+
+**May 2012 – December 2018**
+
+Worked on enterprise NLP platforms and Question Generation systems.
+
+---
+
+# Education
+
+## Indian School of Business (ISB)
+
+**Graduate Certificate in Business Analytics**  
+2016 – 2018
+
+Focused on:
+
+- Business Analytics
+- Data-driven Decision Making
+- Enterprise Analytics
+
+---
+
+## V.R. Siddhartha Engineering College
+
+**Bachelor of Engineering**
+Electronics & Communication
+
+2008 – 2012
+
+---
+
+# Technical Skills
+
+## AI & Machine Learning
+
+- Agentic AI
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- Prompt Engineering
+- AI Governance
+- Responsible AI
+- NLP
+- Computer Vision
+- Deep Learning
+- LLMOps
+
+---
+
+## AI Frameworks
+
+- LangGraph
+- LangChain
+- MCP
+- Hugging Face
+- FastAI
+- Gradio
+- Pydantic
+
+---
+
+## Cloud & Infrastructure
+
+- AWS
+- AWS Bedrock
+- Amazon EKS
+- Docker
+- Kubernetes
+- Terraform
+- CI/CD
+- Jenkins
+- GitHub
+- CircleCI
+
+---
+
+## Search & Databases
+
+- OpenSearch
+- Elasticsearch
+- PostgreSQL
+- MongoDB
+- DynamoDB
+- Redis
+- Kafka
+- BigQuery
+
+---
+
+## Programming
+
+- Python
+- Java
+- TypeScript
+- SQL
+- NumPy
+- Pandas
+- FastAPI
+
+---
+
+## Observability
+
+- Arize Phoenix
+- Apache Superset
+
+---
+
+## Enterprise Architecture
+
+- Cloud Architecture
+- Data Architecture
+- Distributed Systems
+- Microservices
+- AI Platform Engineering
+- Enterprise Architecture
+- Stakeholder Management
+- Strategic Thinking
+- Leadership
+
