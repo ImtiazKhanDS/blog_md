@@ -8,9 +8,7 @@ og_url:
 
 # Imtiaz Khan
 
-
 📍 Andhra Pradesh, India  
-📞 +91 9493377607  
 📧 imtiaz.khan.bds@gmail.com
 
 ---
@@ -259,4 +257,3 @@ Electronics & Communication
 - Stakeholder Management
 - Strategic Thinking
 - Leadership
-
