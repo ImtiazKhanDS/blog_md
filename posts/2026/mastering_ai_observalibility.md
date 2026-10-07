@@ -32,15 +32,42 @@ The three types of Scorers
 - Include explicit examples (few-shot) in prompts
 - Use Loop to help iterate, improve and align
 
-| Feature         | Offline Scoring                          | Online Scoring                          |
-| :-------------- | :--------------------------------------- | :-------------------------------------- |
-| **Purpose**     | Development, testing, and baselining     | Production monitoring and observability |
-| **Timing**      | Prior to deployment (CI/CD)              | Real-time as logs arrive                |
-| **Goal**        | Validate improvements/detect regressions | Identify unknown failure modes          |
-| **Environment** | Controlled, static datasets              | Live traffic/production traces          |
-| **Cost/Scale**  | Limited to test set size                 | Depends on sampling rates               |
-
-AI product has papercuts you cant see
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Offline Scoring</th>
+      <th>Online Scoring</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Purpose</strong></td>
+      <td>Development, testing, and baselining</td>
+      <td>Production monitoring and observability</td>
+    </tr>
+    <tr>
+      <td><strong>Timing</strong></td>
+      <td>Prior to deployment (CI/CD)</td>
+      <td>Real-time as logs arrive</td>
+    </tr>
+    <tr>
+      <td><strong>Goal</strong></td>
+      <td>Validate improvements/detect regressions</td>
+      <td>Identify unknown failure modes</td>
+    </tr>
+    <tr>
+      <td><strong>Environment</strong></td>
+      <td>Controlled, static datasets</td>
+      <td>Live traffic/production traces</td>
+    </tr>
+    <tr>
+      <td><strong>Cost/Scale</strong></td>
+      <td>Limited to test set size</td>
+      <td>Depends on sampling rates</td>
+    </tr>
+  </tbody>
+</table>
 
 - Silent failures : Issues arent caught neatly by factuality , moderation or other common evaluations
 - Evals arent perfect : To hillclimb with your scores just like your agents , you need to know how things go wrong
