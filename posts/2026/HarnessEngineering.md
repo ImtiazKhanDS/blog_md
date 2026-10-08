@@ -12,7 +12,7 @@ description: Harness engineering the new core skill for agentic developers
 type: post
 ---
 
-#### Software Factories
+### Software Factories
 
 - A software factory is an agentic system where the final product is built entirely by agents
 - Humans only shape the work and improve automation, autonomy, and quality.
@@ -30,7 +30,7 @@ The payoff is more than raw speed
 - Broader exploration : Everyone can contribute ideas; every idea can be tried
 - More fun : Focus shifts to shaping ideas , defining quality and architecting the system
 
-#### Harness engineering
+### Harness engineering
 
 - The direct creation , monitoring , and improvement of a project's loops
 - Stop hand-building features and start building the machine that builds them.
@@ -44,13 +44,13 @@ Why hareness engineering is hard ?
 3. Competes with shipping : Foundational agent improvements don't directly touch customers, and can take time to pay off.
 4. Poor legibility : The signal you need is locked in local sessions and people's heads -- sometimes captured nowhere at all.
 
-#### Components of the agentic stack
+### Components of the agentic stack
 
 - Layer 01 : Control Plane (where work is shaped and reviewed) : Issue tracker, PR review, Skills/ plugin registry
 - Layer 02 : Agent IT (Context and Connectivity) : Company brain , Internal services , production logs and traces , execution environments
 - Layer 03 : Improvement loops (How the stack gets better) : Repo maintenance, development playbooks, task automation , output quality optimization
 
-#### The new factory SDLC , with Tessl
+### The new factory SDLC , with Tessl
 
 Reach the cutting edge reliably and sustainbly
 
