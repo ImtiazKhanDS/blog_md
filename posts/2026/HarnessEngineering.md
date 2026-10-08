@@ -59,4 +59,4 @@ Reach the cutting edge reliably and sustainbly
 - Automated improvements : Background optimization discovered from your own tickets and feedback
 - Incremental adoption : Built to slot into your stack one piece at a time
 
-![](../../public/images/tesll_control_plane.png)
+![](../../public/images/tessl_control_plane.png)
