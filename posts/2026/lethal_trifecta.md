@@ -14,13 +14,13 @@ type: post
 
 # Securing AI Agents: The Lethal Trifecta and Task-Based Authorization
 
-AI agents are becoming increasingly capable of reading private data, interacting with external services, and executing actions autonomously. These capabilities make them powerful, but they also introduce a fundamental security challenge: **how do we give an AI agent enough access to get work done without giving it more permissions than it actually needs?**
+AI agents are becoming increasingly capable of reading private data, interacting with external services, and executing actions autonomously. These capabilities make them powerful, but they also introduce a fundamental security challenge: **How do we give an AI agent enough access to get work done without giving it more permissions than it actually needs?**
 
 Consider an on-call triage agent responsible for reading incident tickets, resolving production issues, and escalating incidents that require human intervention. If this agent has unrestricted access to customer data, billing databases, and cloud infrastructure APIs, a single incorrect decision could expose sensitive information, delete production data, interrupt services, or incur unexpected costs.
 
 The problem isn't just what an AI model generates. It's what the agent is authorized to do with its decisions.
 
-In this article, I'll break down the lethal trifecta, explore the limitations of traditional access-control approaches, and explain how token exchange, task-based authorization, and short-lived credentials can help secure agentic systems.
+In this article, I'll break down the lethal trifecta, explore the limitations of existing access-control approaches, and explain how token exchange, task-based authorization, and short-lived credentials can help secure agentic systems.
 
 ## 1. The Problem: When an AI Agent Has Too Much Access
 
@@ -35,7 +35,7 @@ The agent reads incoming tickets, decides what action to take, and either resolv
 
 Now consider a few scenarios.
 
-| Incident                                  | Agent action                                                     | Potential consequence                                                     |
+| Incident                                  | Agent action                                                     | Consequence or concern                                                    |
 | ----------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
 | Billing anomaly                           | Queries customer records and includes them in an incident report | Personally identifiable information (PII) is exposed in the report.       |
 | Backup power failure                      | Escalates the incident                                           | No additional service is called.                                          |
@@ -136,7 +136,7 @@ However, agents still need access to external resources to perform useful work. 
 
 A sandbox controls the execution environment, but it does not independently determine whether every external action is authorized.
 
-### Comparison
+### Comparison of access-control approaches
 
 | Approach     | Primary benefit                                         | Limitation                                                           |
 | ------------ | ------------------------------------------------------- | -------------------------------------------------------------------- |
