@@ -7,7 +7,7 @@ tags:
   - cybersecurity
   - lethal trifecta
 time_to_read: 5
-title: Securing AI Agents: The Lethal Trifecta and Task-Based Authorization
+title: Securing AI Agents The Lethal Trifecta and Task-Based Authorization
 description: The lethal trifecta is a cybersecurity vulnerability pattern in artificial intelligence (AI) agents coined by developer Simon Willison.
 type: post
 ---
