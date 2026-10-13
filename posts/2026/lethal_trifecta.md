@@ -33,14 +33,47 @@ The agent reads incoming tickets, decides what action to take, and either resolv
 
 Now consider a few scenarios.
 
-| Incident                                  | Agent action                                                     | Consequence or concern                                                    |
-| ----------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| Billing anomaly                           | Queries customer records and includes them in an incident report | Personally identifiable information (PII) is exposed in the report.       |
-| Backup power failure                      | Escalates the incident                                           | No additional service is called.                                          |
-| Expiring TLS certificate                  | Calls the cloud hosting API to renew the certificate             | The agent successfully resolves the issue.                                |
-| Broken billing database                   | Drops and restores the database                                  | A destructive production operation occurs, and recovery must be verified. |
-| Frozen main server                        | Restarts the server                                              | Production is temporarily taken offline.                                  |
-| Website failing for one in three visitors | Scales from four pods to forty                                   | Infrastructure costs increase by $420 per hour.                           |
+<table>
+  <thead>
+    <tr>
+      <th>Incident</th>
+      <th>Agent action</th>
+      <th>Consequence or concern</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Billing anomaly</td>
+      <td>Queries customer records and includes them in an incident report</td>
+      <td>Personally identifiable information (PII) is exposed in the report.</td>
+    </tr>
+    <tr>
+      <td>Backup power failure</td>
+      <td>Escalates the incident</td>
+      <td>No additional service is called.</td>
+    </tr>
+    <tr>
+      <td>Expiring TLS certificate</td>
+      <td>Calls the cloud hosting API to renew the certificate</td>
+      <td>The agent successfully resolves the issue.</td>
+    </tr>
+    <tr>
+      <td>Broken billing database</td>
+      <td>Drops and restores the database</td>
+      <td>A destructive production operation occurs, and recovery must be verified.</td>
+    </tr>
+    <tr>
+      <td>Frozen main server</td>
+      <td>Restarts the server</td>
+      <td>Production is temporarily taken offline.</td>
+    </tr>
+    <tr>
+      <td>Website failing for one in three visitors</td>
+      <td>Scales from four pods to forty</td>
+      <td>Infrastructure costs increase by $420 per hour.</td>
+    </tr>
+  </tbody>
+</table>
 
 Some of these actions are legitimate. Renewing an expiring certificate or scaling a service can be exactly what we want an agent to do.
 
@@ -136,11 +169,32 @@ A sandbox controls the execution environment, but it does not independently dete
 
 ### Comparison of access-control approaches
 
-| Approach     | Primary benefit                                         | Limitation                                                           |
-| ------------ | ------------------------------------------------------- | -------------------------------------------------------------------- |
-| OAuth grants | Delegated permissions and user consent                  | Permissions may be too broad or too restrictive for a specific task. |
-| MCP gateway  | Centralized enforcement, observability, and rate limits | Standing credentials may outlive the task.                           |
-| Sandbox      | Execution containment                                   | External resource access still requires authorization.               |
+<table>
+  <thead>
+    <tr>
+      <th>Approach</th>
+      <th>Primary benefit</th>
+      <th>Limitation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>OAuth grants</td>
+      <td>Delegated permissions and user consent</td>
+      <td>Permissions may be too broad or too restrictive for a specific task.</td>
+    </tr>
+    <tr>
+      <td>MCP gateway</td>
+      <td>Centralized enforcement, observability, and rate limits</td>
+      <td>Standing credentials may outlive the task.</td>
+    </tr>
+    <tr>
+      <td>Sandbox</td>
+      <td>Execution containment</td>
+      <td>External resource access still requires authorization.</td>
+    </tr>
+  </tbody>
+</table>
 
 ```mermaid
 flowchart TD
@@ -395,13 +449,42 @@ The user approves the operation, and the user's role permits it. Policy therefor
 
 ### Summary of the outcomes
 
-| Scenario            | Authorization decision                       | Result                               |
-| ------------------- | -------------------------------------------- | ------------------------------------ |
-| Billing anomaly     | Deny access to customer PII                  | Escalate without customer data.      |
-| Certificate renewal | Permit                                       | Certificate is renewed.              |
-| Database deletion   | Deny                                         | Human performs recovery.             |
-| Server restart      | Deny because the user's role lacks authority | Restart is blocked despite approval. |
-| Service scaling     | Permit after approval                        | Scaling succeeds.                    |
+<table>
+  <thead>
+    <tr>
+      <th>Scenario</th>
+      <th>Authorization decision</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Billing anomaly</td>
+      <td>Deny access to customer PII</td>
+      <td>Escalate without customer data.</td>
+    </tr>
+    <tr>
+      <td>Certificate renewal</td>
+      <td>Permit</td>
+      <td>Certificate is renewed.</td>
+    </tr>
+    <tr>
+      <td>Database deletion</td>
+      <td>Deny</td>
+      <td>Human performs recovery.</td>
+    </tr>
+    <tr>
+      <td>Server restart</td>
+      <td>Deny because the user's role lacks authority</td>
+      <td>Restart is blocked despite approval.</td>
+    </tr>
+    <tr>
+      <td>Service scaling</td>
+      <td>Permit after approval</td>
+      <td>Scaling succeeds.</td>
+    </tr>
+  </tbody>
+</table>
 
 ```mermaid
 flowchart TD
